@@ -119,14 +119,23 @@ console.log(alpha);
     {city: "Pittsburg", mascot: "Steelers", conference: "AFC", playoffs: true}  
     ]
 
-    const lottoNums = [15, 34, 55, 34, 26, 42];
+    const lottoNums = [15, 34, 55, 31, 26, 42];
     const playoffTeams = teams.filter(team => (team.playoffs == true))
     const laPlayoffTeams = teams.filter(team => (team.city == "Los Angeles" && team.playoffs == true))
     const afcTeams = teams.filter(team => (team.conference == "AFC"))
     const afcPlayoffTeams = teams.filter(team => (team.conference == "AFC" && team.playoffs == true))
+    const nfcTeams = teams.filter(team => (team.conference == "NFC"))
+    const nfcPlayoffTeams = teams.filter(team => (team.conference == "NFC" && team.playoffs == true))
+    const fullTeams = teams.map(team => (team.city + " " + team.mascot + " " + team.conference))
+    const orderedTeams = teams.sort((a, b)=> a.city > b.city ? 1 : -1);
+    
+
     const evenLotto = lottoNums.filter(num => (num % 2 == 0))
     const oddLotto = lottoNums.filter(num => (num % 2 != 0))
-
+    const lowLotto = lottoNums.filter(num => (num < 40))
+    const highLotto = lottoNums.filter(num => (num > 40))
+    const orderedLotto = lottoNums.sort((a,b) => a > b ? 1 : -1);
+    
   </script>
 </body>
 </html>
